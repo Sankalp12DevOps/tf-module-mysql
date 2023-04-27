@@ -12,7 +12,7 @@ resource "aws_db_instance" "mysql" {
 }
 
 resource "aws_db_parameter_group" "robomysqlparamgroup" {
-  name   = "${var.EV}-rds-pg"
+  name   = "${var.ENV}-rds-pg"
   family = "mysql5.7"
 }
 
