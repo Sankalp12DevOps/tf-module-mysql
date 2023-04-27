@@ -1,4 +1,4 @@
-resource "aws_security_group" "allow_tls-robosop_mysql" {
+resource "aws_security_group" "allow_tls_robosop_mysql" {
   name        = "allow_tls"
   description = "Allow TLS inbound traffic"
   vpc_id      = data.terraform_remote_state.vpc.outputs.ROBO_VPC_ID
