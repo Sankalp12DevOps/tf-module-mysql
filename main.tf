@@ -1,14 +1,14 @@
 resource "aws_db_instance" "mysql" {
-  allocated_storage    = 10
-  db_name              = "mydb"
-  engine               = "mysql"
-  engine_version       = "5.7"
-  instance_class       = "db.t3.micro"
-  username             = "admin1"
-  password             = "Roboshop@1"
-  parameter_group_name =  aws_db_parameter_group.robomysqlparamgroup.name
-  security_group_names =  [aws_security_group.allow_tls-robosop_mysql.name]
-  skip_final_snapshot  = true
+  allocated_storage       = 10
+  db_name                 = "mydb"
+  engine                  = "mysql"
+  engine_version          = "5.7"
+  instance_class          = "db.t3.micro"
+  username                = "admin1"
+  password                = "Roboshop@1"
+  parameter_group_name    =  aws_db_parameter_group.robomysqlparamgroup.name
+  vpc_security_group_ids  =  [aws_security_group.allow_tls-robosop_mysql.name]
+  skip_final_snapshot     = true
 }
 
 resource "aws_db_parameter_group" "robomysqlparamgroup" {
