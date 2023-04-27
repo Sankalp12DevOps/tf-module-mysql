@@ -6,13 +6,13 @@ resource "aws_db_instance" "mysql" {
   instance_class          = "db.t3.micro"
   username                = "admin1"
   password                = "RoboShop@1"
-  parameter_group_name    =  aws_db_parameter_group.robomysqlparamgroup.name
+  parameter_group_name    =  aws_db_parameter_group.robo_mysql_paramgroup.name
   vpc_security_group_ids  =  [aws_security_group.allow_robosop_mysql.id]
   db_subnet_group_name    =  aws_docdb_subnet_group.default.name
   skip_final_snapshot     =  true
 }
 
-resource "aws_db_parameter_group" "robomysqlparamgroup" {
+resource "aws_db_parameter_group" "robo_mysql_paramgroup" {
   name   = "${var.ENV}-rds-pg"
   family = "mysql5.7"
 }
