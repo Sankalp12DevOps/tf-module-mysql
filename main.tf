@@ -10,7 +10,7 @@ resource "aws_db_instance" "mysql" {
   vpc_security_group_ids       =  [aws_security_group.allow_robosop_mysql.id]
   db_subnet_group_name         =  aws_docdb_subnet_group.default.name
   skip_final_snapshot          =  true
-  manage_master_user_password  =  false
+  manage_master_user_password  =  true
 }
 
 resource "aws_db_parameter_group" "robo_mysql_paramgroup" {
