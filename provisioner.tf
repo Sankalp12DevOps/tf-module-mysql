@@ -6,7 +6,7 @@ resource "null_resource" "web" {
     cd /tmp
     unzip mysql.zip
     cd mysql-main
-    mysql -h ${aws_db_instance.mysql.address} -uadmin -pRoboshop1 <shipping.sql
+    mysql -h ${aws_db_instance.mysql.address} -u admin -p Roboshop1 <shipping.sql
     EOF
   }
 }
