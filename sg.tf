@@ -5,8 +5,8 @@ resource "aws_security_group" "allow_robosop_mysql" {
 
   ingress {
     description      = "allow elasticCache Connection"
-    from_port        = 3306
-    to_port          = 3306
+    from_port        = var.SQL_PORT
+    to_port          = var.SQL_PORT
     protocol         = "tcp"
     cidr_blocks      = [data.terraform_remote_state.vpc.outputs.defaultVPCcidr,data.terraform_remote_state.vpc.outputs.vpc_cidr]
   }
