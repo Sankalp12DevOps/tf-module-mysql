@@ -18,7 +18,7 @@ resource "aws_db_parameter_group" "robo_mysql_paramgroup" {
 }
 
 resource "aws_docdb_subnet_group" "default" {
-  name       = "${var.ENV}-docdb-subnet-group"
+  name       = "${var.ENV}-sqldb-subnet-group"
   subnet_ids =  data.terraform_remote_state.vpc.outputs.PRVT_SUBNET_IDS
   tags = {
     Name = "My sqldb subnet group"
