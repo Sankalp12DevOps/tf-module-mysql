@@ -1,6 +1,7 @@
 resource "aws_db_instance" "mysql" {
+  identifier                   =  var.SQL_DB_NAME_${var.ENV}
   allocated_storage            =  10
-  db_name                      =  var.SQL_DB_NAME
+  # db_name                      =  var.SQL_DB_NAME
   engine                       =  var.SQL_ENGINE
   engine_version               =  var.SQL_ENGINE_VERSION
   instance_class               =  var.SQL_INSTANCE_CLASS
