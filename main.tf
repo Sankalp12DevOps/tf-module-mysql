@@ -1,5 +1,5 @@
 resource "aws_db_instance" "mysql" {
-  identifier                   =  "var.SQL_DB_NAME-${var.ENV}"
+  identifier                   =  "${var.SQL_DB_NAME}-${var.ENV}"
   allocated_storage            =  10
   # db_name                      =  var.SQL_DB_NAME
   engine                       =  var.SQL_ENGINE
